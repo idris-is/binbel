@@ -10,8 +10,20 @@ class KesfetPage extends StatefulWidget {
 class _KesfetPageState extends State<KesfetPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Keşfet'),
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: 30),
+          child: TextFormField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+              )
+            ),
+          ),
+        )
+      ],
     );
   }
 }

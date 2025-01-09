@@ -3,36 +3,56 @@
 import 'package:flutter/material.dart';
 
 class YayinlaButton extends StatelessWidget {
-  YayinlaButton({
+  const YayinlaButton({
     super.key,
     required this.text,
     required this.onTap,
     required this.color,
     required this.icon,
   });
-  String text;
-  void Function()? onTap;
-  Color color;
-  IconData icon;
+
+  final String text;
+  final void Function()? onTap;
+  final Color color;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          height: MediaQuery.sizeOf(context).height * 0.1,
-          width: MediaQuery.sizeOf(context).width * 0.8,
+      child: Container(
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: color.withOpacity(0.5),
+              blurRadius: 10,
+              offset: Offset(0, 5),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(icon,size: 50,),
-              Text(text,style: TextStyle(fontSize: 20),),
+              Icon(
+                icon,
+                size: 48,
+                color: Colors.white,
+              ),
+              const SizedBox(height: 12),
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),

@@ -45,14 +45,27 @@ class _ProfilePageState extends State<ProfilePage>
                     padding: const EdgeInsets.all(8.0),
                     child: Stack(
                       children: [
-                        SizedBox(
-                          width: 120,
-                          height: 120,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(100),
-                            child: Image(
-                              image: AssetImage(tProfileImage),
-                              fit: BoxFit.cover,
+                        GestureDetector(
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return Dialog(
+                                    child: Image(
+                                      image: AssetImage(tProfileImage),
+                                    ),
+                                  );
+                                });
+                          },
+                          child: SizedBox(
+                            width: 120,
+                            height: 120,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Image(
+                                image: AssetImage(tProfileImage),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -167,6 +180,7 @@ class _ProfilePageState extends State<ProfilePage>
       body: Column(
         children: [
           TabBar(
+            tabAlignment: TabAlignment.center,
             isScrollable: true,
             dividerColor: Colors.amber,
             tabs: const [
@@ -189,8 +203,16 @@ class _ProfilePageState extends State<ProfilePage>
                   ),
                   itemCount: 20,
                   itemBuilder: (context, index) {
-                    return Center(
-                      child: Text('Yazılar $index'),
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.amber),
+                        child: Center(
+                          child: Text('Yazılar $index'),
+                        ),
+                      ),
                     );
                   },
                 ),
