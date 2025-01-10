@@ -1,4 +1,4 @@
-import 'package:binbel/MyCustomWidget/yayinla_button.dart';
+import 'package:binbel/widgets/yayinla_button.dart';
 import 'package:flutter/material.dart';
 
 class YayinlaPage extends StatelessWidget {

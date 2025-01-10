@@ -1,4 +1,4 @@
-import 'package:binbel/MyCustomWidget/sohbet_listtile.dart';
+import 'package:binbel/widgets/sohbet_listtile.dart';
 import 'package:flutter/material.dart';
 
 class SohbetPage extends StatefulWidget {

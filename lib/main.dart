@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Pages/generael_page.dart';
+import 'screens/generael_page.dart';
 
 void main() => runApp(const MyApp());
 

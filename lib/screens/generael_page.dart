@@ -1,11 +1,12 @@
-import 'package:binbel/Pages/ana_sayfa.dart';
-import 'package:binbel/Pages/kesfet.dart';
-import 'package:binbel/Pages/profil.dart';
-import 'package:binbel/Pages/sohbet.dart';
-import 'package:binbel/Pages/yayinla.dart';
+import 'package:binbel/screens/ana_sayfa.dart';
+import 'package:binbel/screens/sohbet.dart';
+import 'package:binbel/screens/yayinla.dart';
 import 'package:flutter/material.dart';
 import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
 import 'package:circular_bottom_navigation/tab_item.dart';
+
+import 'kesfet.dart';
+import 'profil.dart';
 
 class GeneraelPage extends StatefulWidget {
   const GeneraelPage({super.key});
