@@ -10,8 +10,13 @@ class AnaSayfa extends StatefulWidget {
 class _AnaSayfaState extends State<AnaSayfa> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Ana Sayfa'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BinBel'),
+      ),
+      body: Center(
+        child: Text('Ana Sayfa'),
+      ),
     );
   }
 }

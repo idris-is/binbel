@@ -6,83 +6,144 @@ class YayinlaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 80, bottom: 40),
-          child: Text(
-            'BınBel',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
+    return Scaffold(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 80, bottom: 40),
+            child: Text(
+              'BınBel',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
               ),
-              itemCount: 4,
-              itemBuilder: (context, index) {
-                final items = [
-                  {
-                    'text': 'Makale',
-                    'color': Colors.red,
-                    'icon': Icons.article,
-                  },
-                  {
-                    'text': 'Fotoğraf',
-                    'color': Colors.blue,
-                    'icon': Icons.photo,
-                  },
-                  {
-                    'text': 'Video',
-                    'color': Colors.green,
-                    'icon': Icons.video_library,
-                  },
-                  {
-                    'text': 'Sertifika',
-                    'color': Colors.orange,
-                    'icon': Icons.school,
-                  },
-                ];
-
-                return YayinlaButton(
-                  text: items[index]['text'] as String,
-                  color: items[index]['color'] as Color,
-                  icon: items[index]['icon'] as IconData,
-                  onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: Text('Yayınla'),
-                          content: Text('Bu buttona tıklandı : ${items[index]['text']}.'),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text('Kapat'),
-                            ),
-                          ],
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                ),
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  final items = [
+                    {
+                      'text': 'Makale',
+                      'color': Colors.red,
+                      'icon': Icons.article,
+                      'onTap': () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Yayınla'),
+                              content: Text('Bu buttona tıklandı : Makale.'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Kapat'),
+                                ),
+                              ],
+                            );
+                          },
                         );
                       },
-                    );
-                  },
-                );
-              },
+                    },
+                    {
+                      'text': 'Fotoğraf',
+                      'color': Colors.blue,
+                      'icon': Icons.photo,
+                      'onTap': () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Yayınla'),
+                              content: Text('Bu buttona tıklandı : Fotoğraf.'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Kapat'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                    },
+                    {
+                      'text': 'Video',
+                      'color': Colors.green,
+                      'icon': Icons.video_library,
+                      'onTap': () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Yayınla'),
+                              content: Text('Bu buttona tıklandı : Video.'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Kapat'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                    },
+                    {
+                      'text': 'Sertifika',
+                      'color': Colors.orange,
+                      'icon': Icons.school,
+                      'onTap': () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('Yayınla'),
+                              content: Text('Bu buttona tıklandı : Sertifika.'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('Kapat'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                    },
+                  ];
+      
+                  return YayinlaButton(
+                    text: items[index]['text'] as String,
+                    color: items[index]['color'] as Color,
+                    icon: items[index]['icon'] as IconData,
+                    onTap: items[index]['onTap'] as void Function(
+                  )?,
+                  );
+                },
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

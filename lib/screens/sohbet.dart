@@ -11,34 +11,41 @@ class SohbetPage extends StatefulWidget {
 class _SohbetPageState extends State<SohbetPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 30),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: "Ara...",
-              prefixIcon: Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sohbet'),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              bottom: 5,
             ),
-            onChanged: (value) {},
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "Ara...",
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
+              onChanged: (value) {},
+            ),
           ),
-        ),
-        Expanded(
-          child: ListView.builder(
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              return SohbetListtile(
-                tProfileImage: "assets/profile.jpg",
-                Name: "İdris",
-                theLastMessage: "Son Gelen Mesaj",
-              );
-            },
+          Expanded(
+            child: ListView.builder(
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return SohbetListtile(
+                  tProfileImage: "assets/profile.jpg",
+                  Name: "İdris",
+                  theLastMessage: "Son Gelen Mesaj",
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
