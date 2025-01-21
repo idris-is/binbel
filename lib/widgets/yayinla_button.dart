@@ -26,7 +26,7 @@ class YayinlaButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.5),
+              color: color.withAlpha(128),
               blurRadius: 10,
               offset: Offset(0, 5),
             ),

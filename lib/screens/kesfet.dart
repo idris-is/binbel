@@ -38,26 +38,31 @@ class _KesfetPageState extends State<KesfetPage> {
             ),
           ),
           Expanded(
-            child: GridView.builder(
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          color: Colors.amber),
-                      child: Center(
-                        child: Text('Kesfet $index'),
+            child: RefreshIndicator(
+              onRefresh: () async {
+                await Future.delayed(Duration(seconds: 1));
+              },
+              child: GridView.builder(
+                gridDelegate:
+                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            color: Colors.amber),
+                        child: Center(
+                          child: Text('Kesfet $index'),
+                        ),
                       ),
                     ),
-                  ),
-                );
-              },
-              itemCount: 20,
+                  );
+                },
+                itemCount: 20,
+              ),
             ),
           )
         ],
